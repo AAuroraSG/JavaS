@@ -9,7 +9,7 @@ import configparser
 from argparse import ArgumentError
 
 h = \
-"""JavaS Version: 0.0.4
+"""JavaS Version: 0.0.5
 JavaS <-h | --help>
 	-h | --help : Show help
 	When the help parameter is in any position,
@@ -23,7 +23,7 @@ JavaS <-v | --version>[java version] <command> [args]
 
 cfg = \
 r"""[JavaPath]
-# java17 = C:\Program Files\java\java-17
+; java17 = C:\Program Files\java\java-17
 java8  =
 java11 =
 java17 =
@@ -32,7 +32,7 @@ java25 =
 java26 =
 """
 
-cfg_p = os.path.abspath("JavaS.cfg")
+cfg_p = os.path.abspath("JavaS.ini")
 
 # noinspection pep8-naming
 def JavaS(*args: str):
@@ -87,6 +87,7 @@ def JavaS(*args: str):
 	elif r.returncode !=0:print(r.stderr)
 
 if __name__=="__main__":
+	exit(1)
 	"""
 	JavaS(*sys.argv[1:])
 	model: Not recommended
